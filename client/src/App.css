@@ -1,0 +1,17 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", serif;
+}
+html {
+    font-size: 14px;
+}
+body {
+    background: #EEEEEE;
+}
+
+#root {
+    display: flex;
+    min-height: 100vh;
+}

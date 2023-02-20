@@ -1,15 +1,15 @@
 import React from 'react';
 import './App.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Message from "./pages/Message/Message";
 import Navigation from "./components/Navigation/Navigation";
+import Messages from "./pages/Messages/Messages";
 
 function App() {
   return (
       <BrowserRouter>
           <Navigation />
           <Routes>
-              <Route path={''} element={<Message />} />
+              <Route path={''} element={<Messages />} />
           </Routes>
       </BrowserRouter>
   );
