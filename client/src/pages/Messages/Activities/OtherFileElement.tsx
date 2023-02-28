@@ -1,12 +1,18 @@
 import React from 'react';
 import Flex from "../../../components/Flex";
-import {IconButton} from "@mui/material";
+import {Button, IconButton} from "@mui/material";
 import {KeyboardArrowRight} from "@mui/icons-material";
+import styled from "styled-components";
+import RightArrow from "../../../components/RightArrow";
 
 interface OtherFileElementProps {
     image: string,
     title: string,
 }
+
+const ElementTitle = styled.a`
+  color: ${props => props.theme.colors.fg};
+`
 
 const OtherFileElement = (props: OtherFileElementProps) => {
     return (
@@ -15,9 +21,10 @@ const OtherFileElement = (props: OtherFileElementProps) => {
                 <IconButton>
                     <img src={props.image} alt=""/>
                 </IconButton>
-                <a>{props.title}</a>
+                <ElementTitle>{props.title}</ElementTitle>
             </div>
-            <KeyboardArrowRight />
+            <RightArrow />
+
         </Flex>
     );
 };

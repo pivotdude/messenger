@@ -6,7 +6,7 @@ import {CurrentUserModel, MessageModel} from "../../../models";
 import styled from "styled-components";
 
 const MessageListDisplay = styled.div`
-  background: #f5f5f5;
+  background: ${props => props.theme.colors.primaryBg};
   padding: 5px;
   height: 80vh;
 `

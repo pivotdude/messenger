@@ -9,6 +9,7 @@ const Recent = styled.a`
   display: flex;
   font-size: 1.25rem;
   margin-top: 25px;
+  color: ${props => props.theme.colors.fg};
 `
 
 const Contacts = () => {

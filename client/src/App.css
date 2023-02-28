@@ -7,9 +7,9 @@
 html {
     font-size: 14px;
 }
-body {
-    background: #EEEEEE;
-}
+/*body {*/
+/*    background: #EEEEEE;*/
+/*}*/
 
 #root {
     display: flex;

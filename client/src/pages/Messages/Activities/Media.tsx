@@ -2,8 +2,11 @@ import React from 'react';
 import styled from "styled-components";
 import Flex from "../../../components/Flex";
 import {KeyboardArrowRight} from "@mui/icons-material";
+import RightArrow from "../../../components/RightArrow";
+import {IconButton} from "@mui/material";
 
 const Title = styled.a`
+  color: ${props => props.theme.colors.fg};
   font-size: 1rem;
 `
 
@@ -29,7 +32,7 @@ const Media = () => {
         <>
             <Flex justify='space-between'>
                 <Title>Media</Title>
-                <KeyboardArrowRight />
+                <RightArrow />
             </Flex>
             <Gallery>
                 <Image src='https://www.asroad.org/wp-content/uploads/2021/01/s1200.jpeg' />

@@ -19,3 +19,21 @@ export interface CurrentUserModel {
     status: string,
     image: string,
 }
+
+export interface ThemesProps {
+    theme: Theme
+}
+export interface Theme {
+    colors: {
+        bg: string,
+        fg: string,
+        primaryBg: string,
+        borderColor: string,
+    }
+}
+
+export interface StoryModel {
+    id: any,
+    image: string,
+    name: string,
+}
