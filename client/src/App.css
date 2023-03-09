@@ -5,8 +5,15 @@
     font-family: "Segoe UI", serif;
 }
 html {
-    font-size: 14px;
+    font-size: 15px;
 }
+
+@media (max-width: 1320px) {
+    html {
+        font-size: 14px;
+    }
+}
+
 /*body {*/
 /*    background: #EEEEEE;*/
 /*}*/

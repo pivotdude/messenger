@@ -7,23 +7,41 @@ import Activities from "./Activities/Activities";
 
 const Display = styled(Stack)`
   width: 100%;
+
+`
+const DisplayForContact = styled.div`
+  width: 18%;
+  margin-left: 20px;
+  @media (max-width: 1230px) {
+    display: none;
+  }
+`
+
+const DislayForMessanger = styled.div`
+  width: 85%;
+  @media (max-width: 1230px) {
+    width: 100%;
+  }
 `
 
 
 const Messages = () => {
+
+
+    console.log(window.screen.width)
     return (
         <Display direction='row'>
-            <Stack sx={{width: '15%', marginLeft: '20px'}}>
+            <DisplayForContact>
                 <Contacts />
-            </Stack>
+            </DisplayForContact>
 
-            <Stack sx={{width: '70%'}}>
+            <DislayForMessanger>
                 <Messenger />
-            </Stack>
+            </DislayForMessanger>
 
-            <Stack sx={{width: '15%'}}>
-                <Activities />
-            </Stack>
+            {/*<Stack sx={{width: '15%'}}>*/}
+            {/*    <Activities />*/}
+            {/*</Stack>*/}
         </Display>
     );
 };

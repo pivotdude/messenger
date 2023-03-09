@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import {Avatar} from "@mui/material";
-import MyBadge from "../../../components/MyBadge";
+import MyBadge from "../../../components/UI/MyBadge";
 
 const Title = styled.a`
   color: ${props => props.theme.colors.fg};

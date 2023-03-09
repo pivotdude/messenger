@@ -1,9 +1,9 @@
 import React from 'react';
-import Flex from "../../../components/Flex";
+import Flex from "../../../components/UI/Flex";
 import {Button, IconButton} from "@mui/material";
 import {KeyboardArrowRight} from "@mui/icons-material";
 import styled from "styled-components";
-import RightArrow from "../../../components/RightArrow";
+import RightArrow from "../../../components/UI/RightArrow";
 
 interface OtherFileElementProps {
     image: string,

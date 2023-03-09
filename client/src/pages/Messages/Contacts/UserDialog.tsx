@@ -2,8 +2,8 @@ import React from 'react';
 import {Avatar, Badge, Stack} from "@mui/material";
 import styled, {useTheme} from "styled-components";
 import {UserDialogModel} from "../../../models";
-import MyBadge from "../../../components/MyBadge";
-import Flex from "../../../components/Flex";
+import MyBadge from "../../../components/UI/MyBadge";
+import Flex from "../../../components/UI/Flex";
 
 // const us = styled.input.attrs(props => ({
 //     type: "text",
@@ -54,6 +54,13 @@ interface UserDialogProps {
 }
 
 const UserDialog = (props: UserDialogProps) => {
+
+    let exceptMessage;
+    const letterCount = 60;
+    if (props.user.message.length > letterCount) {
+        exceptMessage = props.user.message.slice(0, letterCount) + " ..."
+    }
+
     return (
         <User direction='row'>
             <Stack sx={{position: 'relative'}}>
@@ -67,7 +74,7 @@ const UserDialog = (props: UserDialogProps) => {
                     <UserName>{props.user.name}</UserName>
                     <UserLastMessageTime>{props.user.time}</UserLastMessageTime>
                 </Flex>
-                <UserLastMessage>{props.user.message}</UserLastMessage>
+                <UserLastMessage>{exceptMessage}</UserLastMessage>
             </UserInfo>
 
         </User>

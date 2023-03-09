@@ -37,3 +37,12 @@ export interface StoryModel {
     image: string,
     name: string,
 }
+
+
+export type allBackendRoutes = 'api/registration' | 'api/login' | 'api/user'
+
+export interface StateModel {
+    app: {
+        authData: any
+    }
+}

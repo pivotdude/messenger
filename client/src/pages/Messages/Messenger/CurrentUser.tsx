@@ -2,7 +2,7 @@ import React from 'react';
 import {Avatar, IconButton, Stack} from "@mui/material";
 import styled, {useTheme} from "styled-components";
 import {CurrentUserModel} from "../../../models";
-import MyBadge from "../../../components/MyBadge";
+import MyBadge from "../../../components/UI/MyBadge";
 
 const CurrentUserPage = styled(Stack)`
   align-items: center;

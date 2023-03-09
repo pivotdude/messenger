@@ -8,7 +8,7 @@ const Form = styled.form`
 
 const MyChat = styled(Stack)`
   margin-top: 1.5rem;
-  padding: 1rem 0.625rem;
+  padding: 10px 5px;
   width: 100%;
   background: ${props => props.theme.colors.primaryBg};
   align-items: center;
@@ -20,6 +20,7 @@ const ChatInput = styled.input`
   font-size: 1.2rem;
   border: none;
   outline: none;
+  color: ${props => props.theme.colors.fg};
 `
 const Icon = styled.svg`
   width: 1.3rem;

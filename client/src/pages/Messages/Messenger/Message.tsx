@@ -31,12 +31,14 @@ const UserMessage = styled.p`
 interface MessageProps {
     message: MessageModel,
 }
-
+const MyAvatar = styled(Avatar)`
+  width: 15%;
+`
 
 const Message = (props: MessageProps) => {
     return (
         <MessageComponent direction='row'>
-            <Avatar variant='rounded' alt="" sx={{width: 60, height: 60}} src={props.message.image}/>
+            <MyAvatar variant='rounded' alt="" src={props.message.image}/>
             <UserInfo>
                 <Stack direction='row' sx={{alignItems: 'center'}}>
                     <UserName>{props.message.name}</UserName>

@@ -5,7 +5,7 @@ import TuneIcon from '@mui/icons-material/Tune';
 import Profile from "./Profile";
 import Media from "./Media";
 import Other from "./Other";
-import Flex from "../../../components/Flex";
+import Flex from "../../../components/UI/Flex";
 import {Divider, IconButton} from "@mui/material";
 import StoriesList from "./StoriesList";
 import {StoryModel} from "../../../models";

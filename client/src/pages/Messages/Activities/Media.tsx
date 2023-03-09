@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
-import Flex from "../../../components/Flex";
+import Flex from "../../../components/UI/Flex";
 import {KeyboardArrowRight} from "@mui/icons-material";
-import RightArrow from "../../../components/RightArrow";
+import RightArrow from "../../../components/UI/RightArrow";
 import {IconButton} from "@mui/material";
 
 const Title = styled.a`

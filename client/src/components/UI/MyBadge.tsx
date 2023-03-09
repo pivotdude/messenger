@@ -31,7 +31,6 @@ function MyBadge (props:MyBadgeProps) {
 
     const [color,setColor] = useState<string>()
 
-
     useEffect(() => {
         if (props.bg == 'green') {
             setColor('#53E04E')

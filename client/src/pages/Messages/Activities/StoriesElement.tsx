@@ -1,7 +1,6 @@
 import React from 'react';
 import {Avatar, Stack} from "@mui/material";
 import styled from "styled-components";
-import Ring from "../../../components/Ring";
 import {StoryModel} from "../../../models";
 
 const Title = styled.a`

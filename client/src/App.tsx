@@ -6,6 +6,8 @@ import Messages from "./pages/Messages/Messages";
 import {ThemeProvider, useTheme} from "styled-components";
 import styled from "styled-components";
 import {ThemesProps} from "./models";
+import Registration from "./pages/Auth/Registration";
+import Login from "./pages/Auth/Login";
 
 const lightTheme = {
     colors: {
@@ -26,6 +28,7 @@ const darkTheme = {
 
 const Content = styled.div<ThemesProps>`
   display: flex;
+  width: 100%;
   background-color: ${props => props.theme.colors.bg};
 `
 
@@ -40,6 +43,8 @@ function App() {
                   <Navigation />
                   <Routes>
                       <Route path={''} element={<Messages />} />
+                      <Route path={'/login'} element={<Login />} />
+                      <Route path={'/registration'} element={<Registration />} />
                   </Routes>
 
               </Content>
