@@ -1,6 +1,6 @@
 import {
     SHOW_LOADER,
-    HIDE_LOADER, AUTHORIZATION, REGISTRATION,
+    HIDE_LOADER, AUTHORIZATION, REGISTRATION, AUTH_USER, DIALOGS,
 } from './types'
 import {allBackendRoutes} from "../models";
 
@@ -12,7 +12,7 @@ interface optionFetchModel {
 }
 
 
-function fetchData(route: allBackendRoutes, types: string, Method: methods = 'GET' ,body: object = {}):object {
+function fetchData(route: allBackendRoutes, type: string, Method: methods = 'GET' ,body: object = {}):object {
     return async (dispatch: Function) => {
         dispatch(showLoader())
 
@@ -22,17 +22,20 @@ function fetchData(route: allBackendRoutes, types: string, Method: methods = 'GE
                 'Authorization': localStorage.getItem('token') ?? null,
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(body)
+        }
+
+        if (Method == 'POST') {
+            options['body'] = body
         }
 
         const response = await fetch(`http://localhost:3005/${route}`, options)
         const json = await response.json()
 
-        dispatch({type: types, payload: json})
+        dispatch({type: type, payload: json})
         dispatch(hideLoader())
     }
 }
-function fetchDataGraphql(route: string, types: string, body: object = {}):object {
+function fetchDataGraphql(type: string, body: string, vars: object):object {
     return async (dispatch: Function) => {
         dispatch(showLoader())
 
@@ -42,13 +45,13 @@ function fetchDataGraphql(route: string, types: string, body: object = {}):objec
                 'Authorization': localStorage.getItem('token') ?? null,
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(body)
+            body: JSON.stringify({query: body, variables: vars})
         }
 
-        const response = await fetch(`http://localhost:3001/graphql/${route}`, options)
+        const response = await fetch('http://localhost:3005/graphql/', options)
         const json = await response.json()
 
-        dispatch({type: types, payload: json})
+        dispatch({type: type, payload: json})
         dispatch(hideLoader())
     }
 }
@@ -63,7 +66,14 @@ export function fetchLoginData(body: LoginData): any  {
     return fetchData("api/login", AUTHORIZATION, "POST", body)
 }
 
+function fetchAuthDialogsUser (): object {
+    return fetchData('api/dialogs', DIALOGS)
+}
 
+
+export function fetchUsersDialog (): any {
+    return fetchAuthDialogsUser()
+}
 
 interface RegistrationData {
     name: string,
@@ -76,7 +86,27 @@ interface RegistrationData {
 export function fetchRegistrationData(body: RegistrationData): any  {
     return fetchData("api/registration", REGISTRATION, "POST", body)
 }
-
+// export function fetchUsersDialog(): any {
+//     const id = fetchData('api/user', 'MY_ID')
+//     console.log(id)
+//     return fetchDataGraphql(AUTH_USER, ` query ($id: ID!) {
+//   user (_id: $id) {
+//     dialogIds {
+//       interlocutors {
+//         _id
+//         name
+//         email
+//       }
+//       _id
+//       messages {
+//         message
+//         sender
+//         time
+//       }
+//     }
+//   }
+// }`, {"id": "JohnMark912"})
+// }
 
 
 export function showLoader():object {

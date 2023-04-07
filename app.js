@@ -7,8 +7,10 @@ const mongoose = require('mongoose');
 const apiRouter = require('./routes/api');
 const graphqlRouter = require('./routes/graphql');
 const crypto = require("crypto");
+const cors = require('cors')
 
 const app = express();
+app.use(cors())
 
 
 
@@ -16,7 +18,7 @@ start()
 AuthParse()
 
 app.use(function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Headers', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'authorization, content-type');
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
     res.setHeader('Access-Control-Allow-Credentials', true);
@@ -38,7 +40,6 @@ module.exports = app;
 
 function AuthParse() {
     app.use((req, res, next) => {
-        console.log(req.headers)
         if (req.headers['authorization']) {
             // console.log(res.headers['Authorization'].replace('Bearer ', ''))
             let tokenParts = req.headers.authorization.split('.')

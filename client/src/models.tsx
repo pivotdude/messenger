@@ -21,7 +21,7 @@ export interface CurrentUserModel {
 }
 
 export interface ThemesProps {
-    theme: Theme
+    theme: Theme,
 }
 export interface Theme {
     colors: {
@@ -39,10 +39,11 @@ export interface StoryModel {
 }
 
 
-export type allBackendRoutes = 'api/registration' | 'api/login' | 'api/user'
+export type allBackendRoutes = 'api/registration' | 'api/login' | 'api/user' | 'api/dialogs'
 
 export interface StateModel {
     app: {
         authData: any
+        authUser: any
     }
 }
